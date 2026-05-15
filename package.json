@@ -1,0 +1,46 @@
+{
+  "name": "playwright-boilerplate",
+  "version": "1.0.0",
+  "description": "A playwright-based end to end ui functional tests boilerplate",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlabee.dt.renault.com/arnaud.ruch/playwright-boilerplate/playwright-boilerplate.git"
+  },
+  "scripts": {
+    "test": "npx playwright test tests/10InterceptAndMocking.spec.js",
+
+
+    "open": "npx playwright test --ui",
+    "demo:skf": "cucumber-js test/local/app-angular/*.feature --exit",
+    "demo:authentication": "cucumber-js test/local/authentication/*.feature",
+    "cucumber:local": "cucumber-js test/local/**/*.feature --exit",
+    "cucumber:xray": "cucumber-js test/xray/**/*.feature --exit",
+    "pw": "npx playwright test",
+    "pw:headed": "npx playwright test --headed",
+    "pw:report": "npx playwright show-report reports/playwright/html",
+    "xray": "rm -rf reports/cucumber/xray && mkdir -p reports/cucumber/xray/merged && npx xray-get-features && npx cucumber-js --format \"json\":\"reports/cucumber/xray/cucumber.json\" \"test/xray/**/*.feature\" --exit; rc=$? && npx xray-build-report && npx xray-send-report && (exit $rc)"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.48.1",
+    "@rd/e2e-token-fetcher": "^1.0.10",
+    "@rd/xray-connector": "^1.0.51",
+    "dotenv": "^16.4.5",
+    "is-ci": "^3.0.1",
+    "playwright": "^1.48.1"
+  },
+   "devDependencies": {
+    
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.3.3",
+
+    "@cucumber/cucumber": "^11.0.1",
+    "@cucumber/pretty-formatter": "^1.0.1",
+    "typescript": "^5.4.5",
+    "ts-node": "^10.9.2",
+    "@types/node": "^20.11.30"
+  }
+}

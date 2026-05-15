@@ -1,0 +1,7 @@
+-Follow the guidance and best practices described on the [Playwright documentation](https://playwright.dev/docs/best-practices).
+- Ensure all code follows the project's coding standards and conventions.
+- Always include proper error handling in the test scripts using try-catch blocks.
+- Do not use hard-coded waits like page.waitForTimeout().
+- Avoid writing long monolithic test cases.
+- Ensure all code passes linting checks using ESLint.
+- Format code consistently using Prettier
